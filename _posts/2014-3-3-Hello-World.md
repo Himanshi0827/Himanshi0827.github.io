@@ -26,6 +26,9 @@ Introduction: Briefly explain what Docker Hub is and why you're uploading contai
 Provide instructions on how to install Docker on your local machine. You can link to the official Docker documentation for detailed instructions.
 ### Step 2: Building a Docker Image: 
 Explain how to build a Docker image using a Dockerfile. You can use a simple example like a "Hello World" application.
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 ### Step 3: Logging in to Docker Hub: 
 Show how to log in to Docker Hub using the docker login command.
 ### Step 4: Tagging and Pushing the Image: 
@@ -52,7 +55,7 @@ EXPOSE 3000
 ENV ROLL_NUMBER=YourRollNumberHere
 CMD ["npm", "start"]
 ```
-![Containers]({{ site.baseurl }}/images/SS2.png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 ### Step 4: Backend Dockerfile
 Create a Dockerfile for the Node.js backend:
 ```Dockerfile
@@ -65,22 +68,25 @@ EXPOSE 5000
 ENV ROLL_NUMBER=YourRollNumberHere
 CMD ["node", "server.js"]
 ```
-
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 ### Step 5: Building Images
 Build frontend and backend images:
 ```
 docker build -t frontend_image_21bcp320 -f ./frontend/Dockerfile ./frontend/
 docker build -t backend_image_21bcp320 -f ./backend/Dockerfile ./backend/
 ```
-
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 ### Step 6: MySQL Docker Container
 Run a MySQL container:
 ```
 docker run -d --name net_mysql_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=yourRootPasswordHere mysql:8.0
 ```
 Create database and tables inside the container.
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 
 ## Part 3: Running the Application
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 ### Step 7: Building Containers
 Build frontend, backend, and MySQL containers:
 ```
@@ -88,11 +94,15 @@ docker run -d --name net_frontend -p 3000:3000 frontend_image_21bcp320
 docker run -d --name net_backend -p 5000:5000 backend_image_21bcp320
 docker run -d --name net_mysql_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=yourRootPasswordHere mysql:8.0
 ```
-
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 ### Step 8: Open in Browser
 Access the frontend app at http://localhost:3000 and backend API at http://localhost:5000/students.
 
 Adjust the placeholders with your actual values. Happy Dockerizing!
 ```
-
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
 This version maintains the structure of your tutorial but ensures that it's unique and doesn't resemble any existing content. You can further customize it with screenshots, diagrams, and additional explanations as needed. Let me know if there's anything else you'd like to add or modify!
