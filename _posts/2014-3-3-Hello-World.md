@@ -106,8 +106,8 @@ Run a MySQL container:
 docker run -d --name net_mysql_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=yourRootPasswordHere mysql:8.0
 ```
 Create database and tables inside the container.
-![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
-
+![Containers]({{ site.baseurl }}/images/Screenshot (344).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (345).png)
 ## Part 3: Running the Application
 ![Containers]({{ site.baseurl }}/images/Screenshot 2024-04-23 193704.jpg)
 ### Step 7: Building Containers
