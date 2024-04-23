@@ -19,6 +19,7 @@ Before we begin, ensure you have the following prerequisites:
 Go to the GitHub Pages documentation (https://docs.github.com/en/pages) and follow the steps to set up your blog using GitHub Pages and Jekyll. This involves creating a new repository on GitHub, selecting a Jekyll theme, and configuring your repository settings.
 Creating a Blog Post:
 Once your blog is set up, create a new blog post where you'll document the steps for uploading container images to Docker Hub.
+![Containers]({{ site.baseurl }}/images/Screenshot (351).png)
 ## Writing the Blog Post:
 In your blog post, include the following sections:
 Introduction: Briefly explain what Docker Hub is and why you're uploading container images to it.
@@ -116,5 +117,5 @@ Access the frontend app at http://localhost:3000 and backend API at http://local
 Adjust the placeholders with your actual values. Happy Dockerizing!
 ```
 ![Containers]({{ site.baseurl }}/images/Screenshot 2024-04-23 193704.jpg)
-![Containers]({{ site.baseurl }}/images/Screenshot (324).png)
+![Containers]({{ site.baseurl }}/images/Screenshot (352).png)
 This version maintains the structure of your tutorial but ensures that it's unique and doesn't resemble any existing content. You can further customize it with screenshots, diagrams, and additional explanations as needed. Let me know if there's anything else you'd like to add or modify!
