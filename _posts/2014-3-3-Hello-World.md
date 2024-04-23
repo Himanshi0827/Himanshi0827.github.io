@@ -47,13 +47,26 @@ Understand key Docker concepts like containers, images, and Dockerfiles.
 ### Step 3: Frontend Dockerfile
 Create a Dockerfile for the React frontend:
 ```Dockerfile
+# Use official Node.js image as the base image
 FROM node:14-alpine
-WORKDIR /app
+
+# Copy package.json and package-lock.json files to the working directory
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
+
+# Copy all files to the working directory
 COPY . .
+
+# Build the React app for production
+RUN npm run build
+
+# Expose port 80 to the outside world
 EXPOSE 3000
-ENV ROLL_NUMBER=YourRollNumberHere
+
+
+# Command to run the application
 CMD ["npm", "start"]
 ```
 
