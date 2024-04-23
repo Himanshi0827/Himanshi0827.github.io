@@ -1,19 +1,20 @@
-
-```markdown
 ---
 layout: post
 title: Setting Up a Multi-Container Application with Docker
 ---
 
-### Introduction
+## Introduction
 In this tutorial, we'll explore how to set up a multi-container application using Docker. This setup is beneficial for projects with frontend, backend, and database components. We'll use React for the frontend, Node.js for the backend, and MySQL for the database.
 
 ### Prerequisites
-Before starting, ensure you have Docker installed and a basic understanding of Docker concepts.
+Before we begin, ensure you have the following prerequisites:
+- Docker installed on your machine
+- Basic understanding of Docker concepts
+- Knowledge of your application's frontend and backend technologies
+
 
 ## Part 1: Docker Setup
-### Step 1: Installing Docker
-Follow the official Docker installation guide for your operating system.
+### Step 1:
 ## Setting Up a Blog using GitHub Pages and Jekyll:
 Go to the GitHub Pages documentation (https://docs.github.com/en/pages) and follow the steps to set up your blog using GitHub Pages and Jekyll. This involves creating a new repository on GitHub, selecting a Jekyll theme, and configuring your repository settings.
 Creating a Blog Post:
@@ -21,10 +22,14 @@ Once your blog is set up, create a new blog post where you'll document the steps
 ## Writing the Blog Post:
 In your blog post, include the following sections:
 Introduction: Briefly explain what Docker Hub is and why you're uploading container images to it.
-### Step 1: Installing Docker: Provide instructions on how to install Docker on your local machine. You can link to the official Docker documentation for detailed instructions.
-### Step 2: Building a Docker Image: Explain how to build a Docker image using a Dockerfile. You can use a simple example like a "Hello World" application.
-### Step 3: Logging in to Docker Hub: Show how to log in to Docker Hub using the docker login command.
-### Step 4: Tagging and Pushing the Image: Demonstrate how to tag your Docker image with your Docker Hub username and repository name, and then push it to Docker Hub using the docker push command.
+### Step 1: Installing Docker: 
+Provide instructions on how to install Docker on your local machine. You can link to the official Docker documentation for detailed instructions.
+### Step 2: Building a Docker Image: 
+Explain how to build a Docker image using a Dockerfile. You can use a simple example like a "Hello World" application.
+### Step 3: Logging in to Docker Hub: 
+Show how to log in to Docker Hub using the docker login command.
+### Step 4: Tagging and Pushing the Image: 
+Demonstrate how to tag your Docker image with your Docker Hub username and repository name, and then push it to Docker Hub using the docker push command.
 Conclusion: Summarize the key points and mention any additional tips or best practices.
 ### Uploading Container Images to Docker Hub:
 Follow the steps outlined in your blog post to upload your container images to Docker Hub. Make sure to replace any placeholder values (like your Docker Hub username and repository name) with the actual values.
@@ -47,7 +52,7 @@ EXPOSE 3000
 ENV ROLL_NUMBER=YourRollNumberHere
 CMD ["npm", "start"]
 ```
-
+![Containers]({{ site.baseurl }}/images/SS2.png)
 ### Step 4: Backend Dockerfile
 Create a Dockerfile for the Node.js backend:
 ```Dockerfile
