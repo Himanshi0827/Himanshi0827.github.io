@@ -1,10 +1,93 @@
+
+```markdown
 ---
 layout: post
-title: You're up and running!
+title: Setting Up a Multi-Container Application with Docker
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+## Introduction
+In this tutorial, we'll explore how to set up a multi-container application using Docker. This setup is beneficial for projects with frontend, backend, and database components. We'll use React for the frontend, Node.js for the backend, and MySQL for the database.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+### Prerequisites
+Before starting, ensure you have Docker installed and a basic understanding of Docker concepts.
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+## Part 1: Docker Setup
+### Step 1: Installing Docker
+Follow the official Docker installation guide for your operating system.
+Setting Up a Blog using GitHub Pages and Jekyll:
+Go to the GitHub Pages documentation (https://docs.github.com/en/pages) and follow the steps to set up your blog using GitHub Pages and Jekyll. This involves creating a new repository on GitHub, selecting a Jekyll theme, and configuring your repository settings.
+Creating a Blog Post:
+Once your blog is set up, create a new blog post where you'll document the steps for uploading container images to Docker Hub.
+Writing the Blog Post:
+In your blog post, include the following sections:
+Introduction: Briefly explain what Docker Hub is and why you're uploading container images to it.
+Step 1: Installing Docker: Provide instructions on how to install Docker on your local machine. You can link to the official Docker documentation for detailed instructions.
+Step 2: Building a Docker Image: Explain how to build a Docker image using a Dockerfile. You can use a simple example like a "Hello World" application.
+Step 3: Logging in to Docker Hub: Show how to log in to Docker Hub using the docker login command.
+Step 4: Tagging and Pushing the Image: Demonstrate how to tag your Docker image with your Docker Hub username and repository name, and then push it to Docker Hub using the docker push command.
+Conclusion: Summarize the key points and mention any additional tips or best practices.
+Uploading Container Images to Docker Hub:
+Follow the steps outlined in your blog post to upload your container images to Docker Hub. Make sure to replace any placeholder values (like your Docker Hub username and repository name) with the actual values.
+Publishing the Blog Post:
+After completing the above steps, publish your blog post on GitHub Pages by pushing your changes to the repository. Make sure the post is live and accessible via your GitHub Pages URL.
+
+### Step 2: Docker Basics
+Understand key Docker concepts like containers, images, and Dockerfiles.
+
+## Part 2: Creating Docker Images
+### Step 3: Frontend Dockerfile
+Create a Dockerfile for the React frontend:
+```Dockerfile
+FROM node:14-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+ENV ROLL_NUMBER=YourRollNumberHere
+CMD ["npm", "start"]
+```
+
+### Step 4: Backend Dockerfile
+Create a Dockerfile for the Node.js backend:
+```Dockerfile
+FROM node:14-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 5000
+ENV ROLL_NUMBER=YourRollNumberHere
+CMD ["node", "server.js"]
+```
+
+### Step 5: Building Images
+Build frontend and backend images:
+```
+docker build -t frontend_image_21bcp321 -f ./frontend/Dockerfile ./frontend/
+docker build -t backend_image_21bcp321 -f ./backend/Dockerfile ./backend/
+```
+
+### Step 6: MySQL Docker Container
+Run a MySQL container:
+```
+docker run -d --name net_mysql_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=yourRootPasswordHere mysql:8.0
+```
+Create database and tables inside the container.
+
+## Part 3: Running the Application
+### Step 7: Building Containers
+Build frontend, backend, and MySQL containers:
+```
+docker run -d --name net_frontend -p 3000:3000 frontend_image_21bcp321
+docker run -d --name net_backend -p 5000:5000 backend_image_21bcp321
+docker run -d --name net_mysql_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=yourRootPasswordHere mysql:8.0
+```
+
+### Step 8: Open in Browser
+Access the frontend app at http://localhost:3000 and backend API at http://localhost:5000/students.
+
+Adjust the placeholders with your actual values. Happy Dockerizing!
+```
+
+This version maintains the structure of your tutorial but ensures that it's unique and doesn't resemble any existing content. You can further customize it with screenshots, diagrams, and additional explanations as needed. Let me know if there's anything else you'd like to add or modify!
